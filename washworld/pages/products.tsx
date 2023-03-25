@@ -11,7 +11,7 @@ export async function getServerSideProps() {
 }
 
 export default function Product({}) {
-   const [products] = useState([])
+   const [products] = useState<any[]>([])
     return(
        <>
  
@@ -21,7 +21,7 @@ export default function Product({}) {
     products?.map((product) => (
       <div key={product.id}> 
       <p>
-        {products.name}: {product.description} {product.price} {product.producttid}:
+        {product.name}: {product.description} {product.price} {product.producttid}:
       </p>
       </div>
     ))

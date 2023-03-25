@@ -14,7 +14,7 @@ export async function getServerSideProps() {
 }
 
 export default function Locations({}) {
-   const [locations] =useState([])
+   const [locations] =useState<any[]>([])
     return(
        <>
  
