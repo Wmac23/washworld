@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 export async function getServerSideProps() {
  const res = await fetch("https://b46f027d-3a5f-4de6-9075-5e861759e531.mock.pstmn.io/products/:lpn");
   const data = await res.json();
@@ -20,9 +21,11 @@ export default function Product({}) {
   ) : (
     products?.map((product) => (
       <div key={product.id}> 
-      <p>
+        <Link href={"/wash/"+ product.program}> 
+        <p>
         {product.name}: {product.description} {product.price} {product.producttid}:
-      </p>
+        </p>
+        </Link>
       </div>
     ))
   )}
